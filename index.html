@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/modal.css">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h1>ENVELO</h1>
+
+    <section id="start">
+        <p>Mozesz mieć swoją przesyłkę w kilkanaście sekund. <br>Rozpocznij klikając w przycisk</p>
+        <button id='btn-1' class="button">Rozpocznij</button>
+    </section>
+
+    <section id="order">
+        <p>Podaj niezbędne dane:</p>
+        <form>
+            <div class="form-group">
+                <label>Numer telefonu</label>
+                <input class="input" type="tel" name='phoneNumber' maxlength="9">
+            </div>
+            <div class="form-group">
+                <label>Kod odbioru</label>
+                <input class="input" type="number" name='pickupCode' maxlength="4"
+                    oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
+            </div>
+            <div>
+                <input id = 'btn-2' class="button" type="button" value="Odbierz paczkę" />
+            </div>
+        </form>
+    </section>
+
+
+    <div id="simpleModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Paczka odebrana!</h3>
+            </div>
+            <div>
+                <p>Zrobileś to w czsie 10 sekund! <br>Czy mozemy zrobić dla Ciebie coś więcej?</p>
+            </div>
+            <div class="moda-footer">
+                <button class="button">To wszystko na dziś</button>
+                <button class="button">Odbierz kolejną paczkę</button>
+            </div>
+           
+        </div>
+    </div>
+
+
+
+    <script src="./js/index.js"></script>
+    <script src="./js/modal.js"></script>
+</body>
+
+</html>
