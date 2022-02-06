@@ -2,14 +2,14 @@
 
 body {
     font-size: 20px;
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: center;
-text-align: center;
-height: 100vh;
-background-color: #ddbea9;
-font-family: 'Khula', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 100vh;
+    background-color: #ddbea9;
+    font-family: 'Khula', sans-serif;
 }
 
 h1 {
@@ -26,19 +26,28 @@ h1 {
     cursor: pointer;
     border-radius: 30px;
     font-size: medium;
-  }
-  
-  .button:hover,
-  .button:active {
-    background: rgb(163, 43, 43);
-  }
-  
-  .button:focus {
-    outline: none;
-  }
+    margin-top: 20px;
+}
 
-  .form-group {
-    margin: 4px 10px;
+.button:hover,
+.button:active {
+    background: rgb(163, 43, 43);
+}
+
+.button:focus {
+    outline: none;
+}
+
+.button:disabled {
+    background-color: lightgrey;
+}
+
+.form-inputs {
+    display: flex;
+}
+
+.form-group {
+    margin: 2px 10px;
     display: inline-block;
 }
 
@@ -47,32 +56,29 @@ h1 {
     display: block;
 }
 
-.input {
+.form-button {
+    display: block;
+}
+
+.error {
+    display: none;
+    margin-top: 7px;
+    color: red;
+}
+
+.form-input {
     height: 7vh;
     width: 20vw;
     background: #ccc;
+    border: 2px solid rgb(100, 27, 27);
     border-radius: 20px;
     font-size: 2rem;
     text-align: center;
-    margin-bottom: 5vh;
     background-color: #a68a64;
+    cursor: pointer;
 
 }
 
-
-
-/* For Firefox */
-
-input[type='number'] {
-    -moz-appearance:textfield;
-}
-
-
-
-/* Webkit browsers like Safari and Chrome */
-
-input[type=number]::-webkit-inner-spin-button,
-input[type=number]::-webkit-outer-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
+.form-input:focus {
+    outline: none;
 }

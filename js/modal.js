@@ -1,22 +1,13 @@
-const modalBtn = document.querySelector('#btn-2');
-const modal = document.querySelector('#simpleModal');
-//const closeBtn = document.querySelector('#closeBtn');
 
-modalBtn.addEventListener('click', openModal);
-//closeBtn.addEventListener('click',closeModal );
-window.addEventListener('click', outsideClick);
+const modal = document.querySelector('#simpleModal');
+const finishBtn = document.querySelector('#finishBtn');
+const pickUpNextBtn = document.querySelector('#pickUpNextBtn');
 
 function openModal() {
     modal.style.display = 'block';
-};
+    submitBtn.value = 'Odbierz paczkę'
+}
 
 function closeModal() {
     modal.style.display = 'none';
-}
-
-function outsideClick(event) {
-
-    if (event.target == modal){
-        modal.style.display = 'none';
-    }
 }

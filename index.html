@@ -7,7 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/index.css">
     <link rel="stylesheet" href="./css/modal.css">
-    <title>Document</title>
+    <title>Poczta Polska</title>
+
 </head>
 
 <body>
@@ -16,26 +17,34 @@
 
     <section id="start">
         <p>Mozesz mieć swoją przesyłkę w kilkanaście sekund. <br>Rozpocznij klikając w przycisk</p>
-        <button id='btn-1' class="button">Rozpocznij</button>
+        <button id='startBtn' class="button">Rozpocznij</button>
     </section>
 
-    <section id="order">
+    <section id="pickUp" hidden>
         <p>Podaj niezbędne dane:</p>
         <form>
-            <div class="form-group">
-                <label>Numer telefonu</label>
-                <input class="input" type="tel" name='phoneNumber' maxlength="9">
+            <div class="form-inputs">
+                <div class="form-group">
+                    <label>Numer telefonu</label>
+                    <input id="phoneInput" class="form-input" type="text" name='phoneNumber' maxlength="9"
+                        onkeypress="return verifyEnteredValue(event)">
+                    <p id="phoneError" class="error"></p>
+                </div>
+                <div class="form-group">
+                    <label>Kod odbioru</label>
+                    <input id="passCode" class="form-input" type="text" name='pickupCode' maxlength="4"
+                        onkeypress="return verifyEnteredValue(event)">
+                    <p id="passcodeError" class="error"></p>
+                </div>
+
             </div>
-            <div class="form-group">
-                <label>Kod odbioru</label>
-                <input class="input" type="number" name='pickupCode' maxlength="4"
-                    oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
-            </div>
+
             <div>
-                <input id = 'btn-2' class="button" type="button" value="Odbierz paczkę" />
+                <input disabled id='submitBtn' class="button" type="submit" value="Odbierz paczkę" />
             </div>
         </form>
     </section>
+
 
 
     <div id="simpleModal" class="modal">
@@ -47,17 +56,18 @@
                 <p>Zrobileś to w czsie 10 sekund! <br>Czy mozemy zrobić dla Ciebie coś więcej?</p>
             </div>
             <div class="moda-footer">
-                <button class="button">To wszystko na dziś</button>
-                <button class="button">Odbierz kolejną paczkę</button>
+                <button id="finishBtn" class="button">To wszystko na dziś</button>
+                <button id="pickUpNextBtn" class="button">Odbierz kolejną paczkę</button>
             </div>
-           
+
         </div>
     </div>
 
-
-
-    <script src="./js/index.js"></script>
+    <script src="./js/input-verification.js"></script>
     <script src="./js/modal.js"></script>
+    <script src="./js/index.js"></script>
+
+
 </body>
 
 </html>
